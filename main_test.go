@@ -1,4 +1,4 @@
-package integration-tests
+package main
 
 import (
 	"net/http"
