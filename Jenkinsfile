@@ -1,8 +1,11 @@
 pipeline {
-    agent any
-    environment {
-        PATH = "/var/jenkins_home/go/bin:${env.PATH}"
+    agent {
+        docker {
+            image 'golang:1.22-alpine'
+            args '-u root'  // необязательно, но полезно для прав
+        }
     }
+
     stages {
         stage('Unit Tests') {
             steps {
